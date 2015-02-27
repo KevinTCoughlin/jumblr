@@ -178,6 +178,12 @@ catch (JumblrException ex) {
 }
 ```
 
+## Gradle
+
+```groovy
+compile 'com.tumblr:jumblr:0.0.11'
+```
+
 ## Maven
 
 ``` xml
