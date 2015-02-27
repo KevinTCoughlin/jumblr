@@ -126,7 +126,7 @@ post.setTitle("hello");
 post.save();
 
 // or if you like..
-Map<String, String> detail = new HashMap<String, String>();
+Map<String, String> detail = new HashMap<>();
 detail.put("title", "hello");
 client.postEdit(blogName, postId, detail);
 ```
@@ -139,7 +139,7 @@ post.setQuote("hello world");
 post.save();
 
 // or if you like...
-Map<String, String> detail = new HashMap<String, String>();
+Map<String, String> detail = new HashMap<>();
 detail.put("quote", "hello world");
 detail.put("type", "quote");
 client.postCreate(blogName, detail);
@@ -161,7 +161,7 @@ Pagination and additional options are on most calls, and you can just pass them
 to the overloaded form:
 
 ``` java
-Map<String, String> options = new HashMap<String, String>();
+Map<String, String> options = new HashMap<>();
 options.put("limit", 2);
 options.put("offset", 5);
 List<Post> posts = blog.posts(options);
