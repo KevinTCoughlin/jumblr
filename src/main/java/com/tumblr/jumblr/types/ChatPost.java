@@ -66,4 +66,26 @@ public class ChatPost extends SafePost {
         return details;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ChatPost)) return false;
+        if (!super.equals(o)) return false;
+
+        ChatPost chatPost = (ChatPost) o;
+
+        if (title != null ? !title.equals(chatPost.title) : chatPost.title != null) return false;
+        if (body != null ? !body.equals(chatPost.body) : chatPost.body != null) return false;
+        return !(dialogue != null ? !dialogue.equals(chatPost.dialogue) : chatPost.dialogue != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (body != null ? body.hashCode() : 0);
+        result = 31 * result + (dialogue != null ? dialogue.hashCode() : 0);
+        return result;
+    }
 }

@@ -137,4 +137,35 @@ public class PhotoPost extends Post {
         return details;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PhotoPost)) return false;
+        if (!super.equals(o)) return false;
+
+        PhotoPost photoPost = (PhotoPost) o;
+
+        if (caption != null ? !caption.equals(photoPost.caption) : photoPost.caption != null) return false;
+        if (width != null ? !width.equals(photoPost.width) : photoPost.width != null) return false;
+        if (height != null ? !height.equals(photoPost.height) : photoPost.height != null) return false;
+        if (link != null ? !link.equals(photoPost.link) : photoPost.link != null) return false;
+        if (photos != null ? !photos.equals(photoPost.photos) : photoPost.photos != null) return false;
+        if (pendingPhotos != null ? !pendingPhotos.equals(photoPost.pendingPhotos) : photoPost.pendingPhotos != null)
+            return false;
+        return postType == photoPost.postType;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (caption != null ? caption.hashCode() : 0);
+        result = 31 * result + (width != null ? width.hashCode() : 0);
+        result = 31 * result + (height != null ? height.hashCode() : 0);
+        result = 31 * result + (link != null ? link.hashCode() : 0);
+        result = 31 * result + (photos != null ? photos.hashCode() : 0);
+        result = 31 * result + (pendingPhotos != null ? pendingPhotos.hashCode() : 0);
+        result = 31 * result + (postType != null ? postType.hashCode() : 0);
+        return result;
+    }
 }

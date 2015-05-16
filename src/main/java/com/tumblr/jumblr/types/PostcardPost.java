@@ -74,4 +74,26 @@ public class PostcardPost extends SafePost {
         return map;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PostcardPost)) return false;
+        if (!super.equals(o)) return false;
+
+        PostcardPost that = (PostcardPost) o;
+
+        if (body != null ? !body.equals(that.body) : that.body != null) return false;
+        if (asking_name != null ? !asking_name.equals(that.asking_name) : that.asking_name != null) return false;
+        return !(asking_url != null ? !asking_url.equals(that.asking_url) : that.asking_url != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (body != null ? body.hashCode() : 0);
+        result = 31 * result + (asking_name != null ? asking_name.hashCode() : 0);
+        result = 31 * result + (asking_url != null ? asking_url.hashCode() : 0);
+        return result;
+    }
 }

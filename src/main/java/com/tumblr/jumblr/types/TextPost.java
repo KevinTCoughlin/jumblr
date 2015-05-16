@@ -56,4 +56,23 @@ public class TextPost extends SafePost {
         return map;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TextPost)) return false;
+        if (!super.equals(o)) return false;
+
+        TextPost textPost = (TextPost) o;
+
+        if (title != null ? !title.equals(textPost.title) : textPost.title != null) return false;
+        return !(body != null ? !body.equals(textPost.body) : textPost.body != null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (body != null ? body.hashCode() : 0);
+        return result;
+    }
 }

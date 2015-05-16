@@ -74,4 +74,26 @@ public class LinkPost extends SafePost {
         return detail;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LinkPost)) return false;
+        if (!super.equals(o)) return false;
+
+        LinkPost linkPost = (LinkPost) o;
+
+        if (title != null ? !title.equals(linkPost.title) : linkPost.title != null) return false;
+        if (url != null ? !url.equals(linkPost.url) : linkPost.url != null) return false;
+        return !(description != null ? !description.equals(linkPost.description) : linkPost.description != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        return result;
+    }
 }

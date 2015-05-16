@@ -51,4 +51,28 @@ public class AnswerPost extends Post {
         throw new IllegalArgumentException("Cannot save AnswerPost");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AnswerPost)) return false;
+        if (!super.equals(o)) return false;
+
+        AnswerPost that = (AnswerPost) o;
+
+        if (asking_name != null ? !asking_name.equals(that.asking_name) : that.asking_name != null) return false;
+        if (asking_url != null ? !asking_url.equals(that.asking_url) : that.asking_url != null) return false;
+        if (question != null ? !question.equals(that.question) : that.question != null) return false;
+        return !(answer != null ? !answer.equals(that.answer) : that.answer != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (asking_name != null ? asking_name.hashCode() : 0);
+        result = 31 * result + (asking_url != null ? asking_url.hashCode() : 0);
+        result = 31 * result + (question != null ? question.hashCode() : 0);
+        result = 31 * result + (answer != null ? answer.hashCode() : 0);
+        return result;
+    }
 }

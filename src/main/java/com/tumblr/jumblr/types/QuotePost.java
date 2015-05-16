@@ -56,4 +56,24 @@ public class QuotePost extends SafePost {
         return map;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof QuotePost)) return false;
+        if (!super.equals(o)) return false;
+
+        QuotePost quotePost = (QuotePost) o;
+
+        if (text != null ? !text.equals(quotePost.text) : quotePost.text != null) return false;
+        return !(source != null ? !source.equals(quotePost.source) : quotePost.source != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        return result;
+    }
 }

@@ -44,5 +44,4 @@ public class PhotosetPost extends PhotoPost {
         addPhoto(new Photo(file));
     }
 
-
 }

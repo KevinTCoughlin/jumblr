@@ -143,4 +143,45 @@ public class AudioPost extends Post {
         return details;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AudioPost)) return false;
+        if (!super.equals(o)) return false;
+
+        AudioPost audioPost = (AudioPost) o;
+
+        if (caption != null ? !caption.equals(audioPost.caption) : audioPost.caption != null) return false;
+        if (player != null ? !player.equals(audioPost.player) : audioPost.player != null) return false;
+        if (audio_url != null ? !audio_url.equals(audioPost.audio_url) : audioPost.audio_url != null) return false;
+        if (plays != null ? !plays.equals(audioPost.plays) : audioPost.plays != null) return false;
+        if (album_art != null ? !album_art.equals(audioPost.album_art) : audioPost.album_art != null) return false;
+        if (artist != null ? !artist.equals(audioPost.artist) : audioPost.artist != null) return false;
+        if (album != null ? !album.equals(audioPost.album) : audioPost.album != null) return false;
+        if (track_name != null ? !track_name.equals(audioPost.track_name) : audioPost.track_name != null) return false;
+        if (track_number != null ? !track_number.equals(audioPost.track_number) : audioPost.track_number != null)
+            return false;
+        if (year != null ? !year.equals(audioPost.year) : audioPost.year != null) return false;
+        if (data != null ? !data.equals(audioPost.data) : audioPost.data != null) return false;
+        return !(external_url != null ? !external_url.equals(audioPost.external_url) : audioPost.external_url != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (caption != null ? caption.hashCode() : 0);
+        result = 31 * result + (player != null ? player.hashCode() : 0);
+        result = 31 * result + (audio_url != null ? audio_url.hashCode() : 0);
+        result = 31 * result + (plays != null ? plays.hashCode() : 0);
+        result = 31 * result + (album_art != null ? album_art.hashCode() : 0);
+        result = 31 * result + (artist != null ? artist.hashCode() : 0);
+        result = 31 * result + (album != null ? album.hashCode() : 0);
+        result = 31 * result + (track_name != null ? track_name.hashCode() : 0);
+        result = 31 * result + (track_number != null ? track_number.hashCode() : 0);
+        result = 31 * result + (year != null ? year.hashCode() : 0);
+        result = 31 * result + (data != null ? data.hashCode() : 0);
+        result = 31 * result + (external_url != null ? external_url.hashCode() : 0);
+        return result;
+    }
 }
