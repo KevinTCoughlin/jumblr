@@ -380,4 +380,66 @@ public class Post extends Resource {
         return "[" + this.getClass().getName() + " (" + blog_name + ":" + id + ")]";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Post)) return false;
+
+        Post post = (Post) o;
+
+        if (id != null ? !id.equals(post.id) : post.id != null) return false;
+        if (author != null ? !author.equals(post.author) : post.author != null) return false;
+        if (reblog_key != null ? !reblog_key.equals(post.reblog_key) : post.reblog_key != null) return false;
+        if (blog_name != null ? !blog_name.equals(post.blog_name) : post.blog_name != null) return false;
+        if (post_url != null ? !post_url.equals(post.post_url) : post.post_url != null) return false;
+        if (short_url != null ? !short_url.equals(post.short_url) : post.short_url != null) return false;
+        if (type != null ? !type.equals(post.type) : post.type != null) return false;
+        if (timestamp != null ? !timestamp.equals(post.timestamp) : post.timestamp != null) return false;
+        if (liked_timestamp != null ? !liked_timestamp.equals(post.liked_timestamp) : post.liked_timestamp != null)
+            return false;
+        if (state != null ? !state.equals(post.state) : post.state != null) return false;
+        if (format != null ? !format.equals(post.format) : post.format != null) return false;
+        if (date != null ? !date.equals(post.date) : post.date != null) return false;
+        if (tags != null ? !tags.equals(post.tags) : post.tags != null) return false;
+        if (bookmarklet != null ? !bookmarklet.equals(post.bookmarklet) : post.bookmarklet != null) return false;
+        if (mobile != null ? !mobile.equals(post.mobile) : post.mobile != null) return false;
+        if (source_url != null ? !source_url.equals(post.source_url) : post.source_url != null) return false;
+        if (source_title != null ? !source_title.equals(post.source_title) : post.source_title != null) return false;
+        if (liked != null ? !liked.equals(post.liked) : post.liked != null) return false;
+        if (slug != null ? !slug.equals(post.slug) : post.slug != null) return false;
+        if (reblogged_from_id != null ? !reblogged_from_id.equals(post.reblogged_from_id) : post.reblogged_from_id != null)
+            return false;
+        if (reblogged_from_name != null ? !reblogged_from_name.equals(post.reblogged_from_name) : post.reblogged_from_name != null)
+            return false;
+        if (note_count != null ? !note_count.equals(post.note_count) : post.note_count != null) return false;
+        return !(notes != null ? !notes.equals(post.notes) : post.notes != null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (reblog_key != null ? reblog_key.hashCode() : 0);
+        result = 31 * result + (blog_name != null ? blog_name.hashCode() : 0);
+        result = 31 * result + (post_url != null ? post_url.hashCode() : 0);
+        result = 31 * result + (short_url != null ? short_url.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (timestamp != null ? timestamp.hashCode() : 0);
+        result = 31 * result + (liked_timestamp != null ? liked_timestamp.hashCode() : 0);
+        result = 31 * result + (state != null ? state.hashCode() : 0);
+        result = 31 * result + (format != null ? format.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (tags != null ? tags.hashCode() : 0);
+        result = 31 * result + (bookmarklet != null ? bookmarklet.hashCode() : 0);
+        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+        result = 31 * result + (source_url != null ? source_url.hashCode() : 0);
+        result = 31 * result + (source_title != null ? source_title.hashCode() : 0);
+        result = 31 * result + (liked != null ? liked.hashCode() : 0);
+        result = 31 * result + (slug != null ? slug.hashCode() : 0);
+        result = 31 * result + (reblogged_from_id != null ? reblogged_from_id.hashCode() : 0);
+        result = 31 * result + (reblogged_from_name != null ? reblogged_from_name.hashCode() : 0);
+        result = 31 * result + (note_count != null ? note_count.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        return result;
+    }
 }
