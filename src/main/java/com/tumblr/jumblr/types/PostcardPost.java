@@ -6,7 +6,7 @@ import java.util.Map;
  * This class represents a post of type "postcard"
  * @author jc
  */
-public class PostcardPost extends SafePost {
+public final class PostcardPost extends SafePost {
 
     private String body;
     private String asking_name;

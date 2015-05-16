@@ -6,7 +6,7 @@ import java.util.Map;
  * This class represents a Post of type "link"
  * @author jc
  */
-public class LinkPost extends SafePost {
+public final class LinkPost extends SafePost {
 
     private String title;
     private String url;

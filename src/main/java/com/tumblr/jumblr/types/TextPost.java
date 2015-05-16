@@ -6,7 +6,7 @@ import java.util.Map;
  * This class represents a post of type "text"
  * @author jc
  */
-public class TextPost extends SafePost {
+public final class TextPost extends SafePost {
 
     private String title;
     private String body;

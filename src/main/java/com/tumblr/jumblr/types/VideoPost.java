@@ -8,7 +8,7 @@ import java.util.Map;
  * This class represents a post of type "video"
  * @author jc
  */
-public class VideoPost extends Post {
+public final class VideoPost extends Post {
 
     private List<Video> player;
     private String caption;

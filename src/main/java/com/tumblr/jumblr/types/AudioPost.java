@@ -7,7 +7,7 @@ import java.util.Map;
  * This class represents a post of type "audio"
  * @author jc
  */
-public class AudioPost extends Post {
+public final class AudioPost extends Post {
 
     private String caption, player, audio_url;
     private Integer plays;

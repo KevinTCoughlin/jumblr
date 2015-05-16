@@ -7,7 +7,7 @@ import java.util.Map;
  * This class represents a post of type "chat"
  * @author jc
  */
-public class ChatPost extends SafePost {
+public final class ChatPost extends SafePost {
 
     private String title;
     private String body;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * A post that is a set of photos
  * @author jc
  */
-public class PhotosetPost extends PhotoPost {
+public final class PhotosetPost extends PhotoPost {
 
     /**
      * Add a photo to this post (multiple allowed) for Photoset
